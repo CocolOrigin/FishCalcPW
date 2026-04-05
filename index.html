@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PW Fish Gems Calculator</title>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #18181b; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 10px; }
+        .pixel-image { image-rendering: pixelated; }
+        .rotate-180 { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-zinc-950 flex justify-center p-4 text-zinc-100 font-sans">
+
+<div class="w-full max-w-[440px] bg-zinc-900 border-2 border-zinc-800 p-5 rounded-2xl shadow-2xl">
+    
+    <div class="flex justify-between items-center mb-8">
+        <img src="https://static.wikia.nocookie.net/portalworldsgame/images/4/45/Pixel_Worlds.png/revision/latest?cb=20200514104855"
+             class="h-6" alt="Logo">
+        <div class="text-right">
+            <span class="block text-[10px] text-zinc-500 uppercase font-black">Total Gems</span>
+            <span id="totalGems" class="font-bold text-3xl text-cyan-400">0</span>
+        </div>
+    </div>
+
+    <div id="fishContainer" class="space-y-3 max-h-[75vh] overflow-y-auto pr-2 custom-scrollbar"></div>
+
+    <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between text-[9px] text-zinc-600">
+        <span>MODULAR v1</span>
+        <button onclick="resetAll()" class="text-red-500 underline">Reset All</button>
+    </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
