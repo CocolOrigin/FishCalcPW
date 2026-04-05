@@ -1,5 +1,5 @@
 const fishData = {
-    "Dumb Fish": { file: "https://static.wikia.nocookie.net/portalworldsgame/images/6/60/Dumb_Fish_%28Huge%29.png/revision/latest?cb=20190920065843", tiny: 5, small: 10, medium: 30, large: 50, huge: 100 },
+    // "Dumb Fish": { file: "https://static.wikia.nocookie.net/portalworldsgame/images/6/60/Dumb_Fish_%28Huge%29.png/revision/latest?cb=20190920065843", tiny: 5, small: 10, medium: 30, large: 50, huge: 100 },
     "Herring": { file: "https://static.wikia.nocookie.net/portalworldsgame/images/1/1a/Herring_%28Huge%29.png/revision/latest?cb=20190611093014", tiny: 10, small: 40, medium: 70, large: 100, huge: 300 },
     "Kingfish": { file: "https://static.wikia.nocookie.net/portalworldsgame/images/8/8e/Kingfish_%28Huge%29.png/revision/latest/?cb=20190611094204", tiny: 10, small: 40, medium: 70, large: 100, huge: 300 },
     "Butterflyfish": { file: "https://static.wikia.nocookie.net/portalworldsgame/images/7/76/Butterflyfish_%28Huge%29.png/revision/latest/?cb=20190610124856", tiny: 15, small: 60, medium: 105, large: 150, huge: 450 },
