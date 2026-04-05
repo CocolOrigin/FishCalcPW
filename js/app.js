@@ -45,7 +45,7 @@ function updateCount(id, change, price, fishCardId, event) {
 
     state.inventory[id] = (state.inventory[id] || 0) + change;
 
-    document.getElementById(`display-${id}`).innerText =
+    document.getElementById(`display-${id}`).value =
         state.inventory[id];
 
     recalculateAll();
@@ -70,6 +70,25 @@ function resetAll() {
     document.querySelectorAll('[id^="subtotal-"]').forEach(el => el.innerText = "0");
 }
 
+function handleInput(id) {
+    let value = document.getElementById(`display-${id}`).value;
+
+    if (value === "" || value < 0) value = 0;
+
+    state.inventory[id] = parseInt(value) || 0;
+
+    recalculateAll();
+}
+
+function handleBlur(id) {
+    let el = document.getElementById(`display-${id}`);
+    if (el.value === "" || el.value < 0) {
+        el.value = 0;
+        state.inventory[id] = 0;
+        recalculateAll();
+    }
+}
+
 function init() {
     const container = document.getElementById('fishContainer');
 
@@ -85,7 +104,16 @@ function init() {
                 <div class="flex flex-col items-center">
                     <span class="text-[8px] text-zinc-500 font-black mb-1 uppercase">${size}</span>
                     <button onclick="updateCount('${id}', 1, ${price}, '${fishIdName}', event)" class="w-8 h-8 bg-zinc-800 rounded-full">+</button>
-                    <div id="display-${id}" class="w-11 text-center text-cyan-400">0</div>
+                    <input
+                        id="display-${id}"
+                        type="number"
+                        value="0"
+                        min="0"
+                        onclick="this.select()"
+                        oninput="handleInput('${id}')"
+                        onblur="handleBlur('${id}')"
+                        class="w-11 text-center text-cyan-400 bg-zinc-900 border border-zinc-700 rounded mt-1"
+                    >
                     <button onclick="updateCount('${id}', -1, ${price}, '${fishIdName}', event)" class="w-8 h-8 bg-zinc-800 rounded-full">-</button>
                     <span class="text-[9px] text-yellow-600">${price}</span>
                 </div>
